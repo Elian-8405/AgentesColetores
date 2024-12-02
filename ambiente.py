@@ -13,7 +13,7 @@ class Grid:
     def adicionarAgente(self, x, y, tipo):
         if self.grid[x][y] != 0:  # Verifica se a posição está ocupada (onde 0 indica célula vazia)
             raise ValueError("Posição Ocupada")  # Lança erro se a posição não estiver vazia
-        self.grid[x][y] = tipo# Marca a posição com 1 ou outro valor que indique que o agente está ali
+        self.grid[x][y] = tipo
 
     def atualizarPosicaoAgente(self, posicaoAntiga, novaPos, tipo):
         # Remove o agente da posição antiga
@@ -22,6 +22,8 @@ class Grid:
 
         # Adiciona o agente na nova posição
         x_new, y_new = novaPos
+        
+            
         self.grid[x_new][y_new] = tipo
 
     def gerarObstaculo(self):
@@ -44,11 +46,11 @@ class Grid:
                 if val == "O":
                     print("[O]", end=" ")
                 if val == "AR":
-                    print("[AR]", end=" ")
+                    print("\033[0;30;41m[AR]\033[m", end=" ")
                 if val == "AE":
-                    print("[AR]", end=" ")
+                    print("\033[0;30;41m[AE]\033[m", end=" ")
                 if val == "AO":
-                    print("[AO]", end=" ")
+                    print("\033[0;30;41m[AO]\033[m", end=" ")
                 if val == 10:
                     print("[CE]", end=" ")
                 if val == 20:

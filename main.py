@@ -18,12 +18,12 @@ def main():
     agente2 = AgenteBaseadoEstado(grid, (1, 1))   # Agente baseado em estado na posição (1, 1)
     agente3 = AgenteBaseadoObjetivos(grid, (2, 2))  # Agente baseado em objetivos na posição (2, 2)
     print()
-    # Mostrar o grid após adicionar os agentes
+   
     print("Grid Após Adicionar Agentes:")
     grid.mostrarGrid()
 
-    # Executar as ações dos agentes por alguns turnos
-    for _ in range(10):  # Número de iterações (turnos)
+    
+    for _ in range(20):  
         print("\nMovimento dos Agentes:")
         agente1.mover()
         agente2.mover()

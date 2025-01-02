@@ -60,7 +60,7 @@ class AgenteReativoSimples(Agente):
 class AgenteBaseadoEstado(Agente):
     def __init__(self, grid, posicao_inicial):
         super().__init__(grid, posicao_inicial)
-        self.tipo = "AE"  # Definindo o tipo do agente
+        self.tipo = "AE"  
         self.grid.adicionarAgente(self.posicaoAtual[0], self.posicaoAtual[1], self.tipo)  # Passando o tipo para adicionarAgente
         self.grid.grid[self.posicaoAtual[0]][self.posicaoAtual[1]] = self.tipo
 
@@ -164,7 +164,7 @@ class AgenteBaseadoObjetivos(Agente):
             valor_celula = self.grid.grid[proxima_posicao[0]][proxima_posicao[1]]
             #self.coletar(proxima_posicao)
 
-            # Permitir movimento para células vazias (0) ou com recursos (10, 20)
+            
             if valor_celula in [0, 10, 20]:
                 self.coletar(proxima_posicao)
                 self.grid.atualizarPosicaoAgente(self.posicaoAtual, proxima_posicao, self.tipo)
@@ -191,4 +191,5 @@ class AgenteBaseadoObjetivos(Agente):
             self.grid.grid[x][y] = 0
             if recurso == 10:
                 print(f"AgenteBaseadoObjetivo coletou Cristal Energetico em ({x}, {y}).")
-            
+            if recurso == 20:
+                print(f"AgenteBaseadoObjetivo coletou Bloco de Metal em ({x}, {y}).")

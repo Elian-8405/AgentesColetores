@@ -29,13 +29,13 @@ class Grid:
     def gerarObstaculo(self):
         for i in range(self.tamanho):
             for j in range(self.tamanho):
-                if random.random() < 0.1:  # Aproximadamente 10% de chance para colocar um obstáculo
-                    self.grid[i][j] = "O"  # O representa obstácul
+                if random.random() < 0.1:  
+                    self.grid[i][j] = "O"  
 
     def gerarRecursos(self):
         for i in range(self.tamanho):
             for j in range(self.tamanho):
-                if random.random() < 0.2:  # Aproximadamente 20% de chance para colocar um recurso
+                if random.random() < 0.2: 
                     self.grid[i][j] = random.choice([10, 20, 50])
     
     def mostrarGrid(self):
